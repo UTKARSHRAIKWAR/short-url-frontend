@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 export default function UrlShortenerUI() {
   const [url, setUrl] = useState("");
@@ -35,7 +36,7 @@ export default function UrlShortenerUI() {
         },
       };
 
-      const { data } = await axios.post(
+      const { data } = await API.post(
         "/api/shorturl",
         {
           url,
