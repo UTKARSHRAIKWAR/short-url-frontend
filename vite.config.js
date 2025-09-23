@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://short-url-backend-jkt0.onrender.com/", // Your backend server address
+        target: "https://short-url-backend-jkt0.onrender.com", // Your backend server address
         changeOrigin: true,
       },
     },

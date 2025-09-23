@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { toast } from "sonner";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../../api";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -39,7 +40,7 @@ const SignUp = () => {
         },
       };
 
-      const { data } = await axios.post(
+      const { data } = await API.post(
         "/api/auth/register",
         {
           name,

@@ -3,7 +3,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { toast } from "sonner"; //
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../../api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ const Login = () => {
         headers: { "Content-type": "application/json" },
       };
 
-      const { data } = await axios.post(
+      const { data } = await API.post(
         "/api/auth/login",
         {
           email,
