@@ -18,20 +18,20 @@ const HomePage = () => {
   }, [navigate]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Card>
+    <div className="flex min-h-screen items-center justify-center bg-background px-4 py-12">
+      <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle></CardTitle>
+          {/* CardTitle can be used for "Login / Sign Up" if you wish */}
+          <CardTitle className="text-center text-2xl font-bold">
+            Welcome
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <Tabs defaultValue="login" className="w-[400px]">
-            <TabsList className="mb-1 w-full">
-              <TabsTrigger className="w-1/2" value="login">
-                Login
-              </TabsTrigger>
-              <TabsTrigger className="w-1/2" value="signup">
-                SignUp
-              </TabsTrigger>
+          {/* The w-full here ensures it fills the Card's constrained width */}
+          <Tabs defaultValue="login" className="w-full">
+            <TabsList className="mb-4 grid w-full grid-cols-2">
+              <TabsTrigger value="login">Login</TabsTrigger>
+              <TabsTrigger value="signup">SignUp</TabsTrigger>
             </TabsList>
             <TabsContent value="login">
               <Login />
