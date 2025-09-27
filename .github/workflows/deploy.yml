@@ -38,7 +38,7 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH || '/var/www/html' }}
         run: |
-          rsync -avz --delete -e "ssh -i ./deploy_key -o StrictHostKeyChecking=no -p $SSH_PORT" build/ ${EC2_USER}@${EC2_HOST}:${DEPLOY_PATH}/
+          rsync -avz --delete -e "ssh -i ./deploy_key -o StrictHostKeyChecking=no -p $SSH_PORT" dist/ ${EC2_USER}@${EC2_HOST}:${DEPLOY_PATH}/
 
       - name: 🔄 Reload Nginx
         run: |
