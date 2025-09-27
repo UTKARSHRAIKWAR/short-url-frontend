@@ -23,7 +23,7 @@ const HomePage = () => {
         <CardHeader>
           {/* CardTitle can be used for "Login / Sign Up" if you wish */}
           <CardTitle className="text-center text-2xl font-bold">
-            Welcome test
+            Welcome test 2
           </CardTitle>
         </CardHeader>
         <CardContent>
